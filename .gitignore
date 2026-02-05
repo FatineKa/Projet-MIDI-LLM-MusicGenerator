@@ -1,0 +1,180 @@
+# ============================================================================
+# PROJET LLM MUSIC GENERATION - .gitignore
+# ============================================================================
+# Ce fichier indique à Git quels fichiers IGNORER (ne pas versionner).
+#
+# POURQUOI ?
+# ----------
+# Certains fichiers sont trop volumineux pour GitHub ou ne doivent pas
+# être partagés (données, modèles entraînés, fichiers temporaires).
+#
+# STRATÉGIE DE COLLABORATION:
+# ---------------------------
+# - CODE: versé sur GitHub (Python, README, config)
+# - DATASET: partagé séparément (USB, Google Drive, etc.)
+# - MODÈLES ENTRAÎNÉS: partagés séparément (trop gros pour Git)
+# - DATA PRÉPARÉES: chaque personne exécute data_preparation.py localement
+# ============================================================================
+
+# ============================================================================
+# DATASET MIDI (TROP VOLUMINEUX)
+# ============================================================================
+# Le dossier GrandMidiPiano contient ~10,855 fichiers MIDI (plusieurs GB).
+# Trop volumineux pour GitHub. Partagez-le avec votre partenaire via:
+# - Google Drive / OneDrive
+# - Clé USB
+# - WeTransfer
+# Ou demandez à votre partenaire d'utiliser son propre dataset MIDI.
+
+GrandMidiPiano/
+*.mid
+*.midi
+
+# Sauf si vous avez UN fichier MIDI d'exemple (petit)
+# !example.mid
+
+
+# ============================================================================
+# MODÈLES ENTRAÎNÉS (TROP GROS)
+# ============================================================================
+# Les fichiers .pt contiennent les poids du modèle (70+ MB chacun).
+# GitHub limite les fichiers à 100 MB. De toute façon, votre partenaire
+# va entraîner son propre modèle.
+#
+# Si vous voulez vraiment partager un modèle entraîné:
+# - Utilisez Git LFS (Large File Storage)
+# - Ou partagez via Google Drive
+
+models/*.pt
+*.pth
+*.ckpt
+
+
+# ============================================================================
+# DONNÉES PRÉPARÉES (GÉNÉRÉES LOCALEMENT)
+# ============================================================================
+# Ces fichiers sont créés par data_preparation.py et peuvent être
+# régénérés facilement. Pas besoin de les versionner.
+
+data/tokenizer.pkl
+data/training_data.pkl
+all_midi_tokens_v2.txt
+exempleFichierToken.txt
+
+
+# ============================================================================
+# FICHIERS DE SORTIE (GÉNÉRÉS)
+# ============================================================================
+# output/ contient les musiques générées, graphiques, etc.
+# Ces fichiers sont temporaires et peuvent être régénérés.
+
+output/
+*.png
+generated_*.txt
+generated_*.mid
+
+
+# ============================================================================
+# PYTHON - FICHIERS TEMPORAIRES
+# ============================================================================
+# Fichiers créés automatiquement par Python pendant l'exécution.
+# Doivent TOUJOURS être ignorés.
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+
+# ============================================================================
+# ENVIRONNEMENTS VIRTUELS
+# ============================================================================
+# Les environnements virtuels Python contiennent des milliers de fichiers
+# de dépendances. JAMAIS versionnés. Chaque personne crée son propre venv.
+
+env/
+venv/
+ENV/
+.venv/
+conda/
+
+
+# ============================================================================
+# IDEs et ÉDITEURS
+# ============================================================================
+# Fichiers de configuration des éditeurs de code.
+# Chaque personne a ses propres préférences.
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+
+# ============================================================================
+# SYSTÈME D'EXPLOITATION
+# ============================================================================
+# Fichiers systèmes créés par Windows, Mac ou Linux.
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+.directory
+
+
+# ============================================================================
+# LOGS ET BASES DE DONNÉES
+# ============================================================================
+*.log
+*.sql
+*.sqlite
+*.db
+
+
+# ============================================================================
+# FICHIERS TEMPORAIRES
+# ============================================================================
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.cache
+
+
+# ============================================================================
+# FICHIERS À INCLURE (EXEMPLES)
+# ============================================================================
+# Les lignes avec ! FORCENT Git à inclure ces fichiers, même s'ils matchent
+# un pattern d'exclusion ci-dessus.
+#
+# Décommentez si nécessaire:
+# !example.mid          # Un petit fichier MIDI d'exemple
+# !sample_output.png    # Image d'exemple pour le README
