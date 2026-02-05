@@ -58,7 +58,7 @@ def midi_to_tokens_v2(midi_file_path):
         all_notes.sort(key=lambda x: x['start'])
         
         # Générer les tokens
-       tokens = []
+        tokens = []
         current_time = 0
         
         for note in all_notes:
