@@ -2,6 +2,23 @@
 
 Ce projet implémente un modèle de langage (LLM) basé sur l'architecture Transformer pour générer de la musique à partir de fichiers MIDI.
 
+## 🚀 Quick Start pour Collaborateurs
+
+**Nouveau collaborateur ?** Consultez le guide complet : **[SETUP.md](SETUP.md)**
+
+Le guide SETUP.md contient toutes les instructions détaillées pour :
+- Cloner le projet
+- Télécharger le dataset GrandMidiPiano
+- Préparer les données
+- Entraîner le modèle
+
+## Prérequis
+
+- **Dataset MIDI** : GrandMidiPiano ou tout autre dataset MIDI ([instructions dans SETUP.md](SETUP.md))
+- **Python 3.8+**
+- **15 GB d'espace disque**
+- **GPU recommandé** (optionnel mais accélère l'entraînement)
+
 ## Installation
 
 ```bash

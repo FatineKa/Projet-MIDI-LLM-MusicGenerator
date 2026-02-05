@@ -179,8 +179,8 @@ def main():
     # Créer le dossier data/
     os.makedirs(config.DATA_DIR, exist_ok=True)
     
-    # Charger les tokens
-    tokens = load_tokens_from_file("exempleFichierToken.txt")
+    # Charger les tokens depuis le dataset GrandMidiPiano (généré par batch_convert_midi_v2.py)
+    tokens = load_tokens_from_file("all_midi_tokens_v2.txt")
     
     # Analyser le vocabulaire
     analyze_tokens(tokens)
